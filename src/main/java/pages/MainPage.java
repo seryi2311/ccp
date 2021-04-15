@@ -7,16 +7,30 @@ import org.openqa.selenium.support.FindBy;
 public class MainPage{
 
     @FindBy(xpath = "//span[contains(text(),'Библиотека НА')]")
-    private WebElement libraryNA;
+    private WebElement libraryNALink;
 
     @FindBy(xpath = "//span[contains(text(),'Библиотека ОИ')]")
-    private WebElement generalInformationLibrary;
+    private WebElement generalInformationLibraryLink;
+
+    @FindBy(xpath = "//span[contains(text(), 'Бланки для печати')]")
+    private WebElement formsForPrintingLink;
+
+    @FindBy(xpath = "//span[contains(text(),'Отчеты')]")
+    private WebElement reportLink;
 
     public void LibraryNAClick(){
-        libraryNA.click();
+        libraryNALink.click();
     }
 
     public void generalInformationLibraryClick(){
-        generalInformationLibrary.click();
+        generalInformationLibraryLink.click();
+    }
+
+    public void formsForPrintingClick(){
+        formsForPrintingLink.click();
+    }
+
+    public void reportLinkClick(){
+        reportLink.click();
     }
 }

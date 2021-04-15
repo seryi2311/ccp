@@ -4,7 +4,8 @@ import org.openqa.selenium.support.PageFactory;
 import pages.LibraryPage;
 import pages.MainPage;
 
-public class LibraryNATest extends WebDriverSettings{
+public class FormsForPrintingTest extends WebDriverSettings{
+
     public MainPage mainPage;
     public LibraryPage libraryPage;
 
@@ -15,27 +16,27 @@ public class LibraryNATest extends WebDriverSettings{
     }
 
     @Test
-    public void getLibraryNaTest(){
+    public void getFormsForPrintingTest(){
         loginPage.loginPage(login, password);
-        mainPage.LibraryNAClick();
-        libraryPage.checkGetLibraryNa();
+        mainPage.formsForPrintingClick();
+        libraryPage.checkGetFormsForPrinting();
     }
 
     @Test
-    public void createDocumentTest() throws InterruptedException {
+    public void createDocument() throws InterruptedException {
         loginPage.loginPage(login, password);
-        mainPage.LibraryNAClick();
-        libraryPage.checkGetLibraryNa();
+        mainPage.formsForPrintingClick();
+        libraryPage.checkGetFormsForPrinting();
         libraryPage.clickAddCategory();
         libraryPage.enterName();
-
         libraryPage.clickAddCategory();
         libraryPage.checkCreateDocument();
     }
 
-    @Test public void deleteCategoryTest(){
+    @Test
+    public void deleteCategoryTest(){
         loginPage.loginPage(login, password);
-        mainPage.LibraryNAClick();
+        mainPage.generalInformationLibraryClick();
         libraryPage.deleteCategory();
     }
 }

@@ -1,11 +1,12 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 public class LoginPage {
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public LoginPage (WebDriver driver){
         this.driver = driver;
@@ -40,5 +41,13 @@ public class LoginPage {
         enterLogin(login);
         enterPassword(password);
         pressSignUpButton();
+    }
+
+    public void checkIncorrectLogin(){
+        driver.findElement(By.xpath("//span[contains(text(),'Ошибка аутентификации')]"));
+    }
+
+    public void checkCorrectLogin(){
+        driver.findElement(By.xpath("//h2[text() = 'Информация']"));
     }
 }

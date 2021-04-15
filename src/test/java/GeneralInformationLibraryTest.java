@@ -1,7 +1,5 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import pages.LibraryPage;
 import pages.MainPage;
@@ -17,22 +15,21 @@ public class GeneralInformationLibraryTest extends WebDriverSettings{
     }
 
     @Test
-    public void getLibraryNaTest(){
+    public void getGeneralInformationLibraryTest(){
         loginPage.loginPage(login, password);
         mainPage.generalInformationLibraryClick();
-        driver.findElement(By.xpath("//span[contains(text(), 'Библиотека ОИ')]"));
+        libraryPage.checkGetGeneralInformationLibrary();
     }
 
     @Test
     public void createDocumentTest(){
         loginPage.loginPage(login, password);
         mainPage.generalInformationLibraryClick();
-        driver.findElement(By.xpath("//span[contains(text(),'Акты')]"));
+        libraryPage.checkGetGeneralInformationLibrary();
         libraryPage.clickAddCategory();
         libraryPage.enterName();
-        WebElement button = driver.findElement(By.xpath("//button[contains(text(), 'Добавить категорию')]"));
-        button.click();
-        driver.findElement(By.xpath("//span[text() ='"+ libraryPage.title + "']"));
+        libraryPage.clickAddCategory();
+        libraryPage.checkCreateDocument();
     }
 
     @Test public void deleteCategoryTest(){
